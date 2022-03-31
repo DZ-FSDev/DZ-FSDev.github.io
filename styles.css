@@ -16,8 +16,8 @@ a:any-link {
     margin-left: 20px;
 }
 
-.breadcrumb-item{
+.breadcrumb, .nav-item{
     border-top: #40ae7b solid 0.3vh;
     padding: 0.5vw;
-    border-radius: 1vw;
+    border-radius: 2vw;
 }
