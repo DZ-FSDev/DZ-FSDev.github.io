@@ -4,12 +4,12 @@ a:any-link {
 
 .tl-logo{
     width: 10vw;
-    min-width: 100px;
+    min-width: 120px;
     margin-right: 1vw;
 }
 
 .navbar-brand{
-    margin-right: 13vw;
+    margin-right: 17vw;
 }
 
 .breadcrumb-item:first-child{
