@@ -1,3 +1,12 @@
 a:any-link {
     color: #40AE7B;
 }
+
+.tl-logo{
+    width: 10vw;
+    min-width: 100px;
+}
+
+.navbar-brand{
+    margin-right: 13vw;
+}
