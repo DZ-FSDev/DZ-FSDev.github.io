@@ -5,8 +5,19 @@ a:any-link {
 .tl-logo{
     width: 10vw;
     min-width: 100px;
+    margin-right: 1vw;
 }
 
 .navbar-brand{
     margin-right: 13vw;
+}
+
+.breadcrumb-item:first-child{
+    margin-left: 20px;
+}
+
+.breadcrumb-item{
+    border-top: #40ae7b solid 0.3vh;
+    padding: 0.5vw;
+    border-radius: 1vw;
 }
