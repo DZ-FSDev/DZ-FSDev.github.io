@@ -5,12 +5,16 @@ a:any-link {
 .tl-logo {
     width: 10vw;
     border-radius: 30%;
-    min-width: 120px;
+    min-width: 180px;
     margin-right: 1vw;
 }
 
+.card{
+    border-width: 0.3vw;
+}
+
 .navbar-brand {
-    margin-right: 17vw;
+    margin-right: 23vw;
 }
 
 .noRightMargin {
