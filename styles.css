@@ -39,10 +39,20 @@ a:any-link {
     height: calc(30vh + 200px);
 }
 
+.productIcon{
+    display: block;
+    font-size: 13vw;
+    text-align: center;
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
+}
+
+.text-purple{
+    color: purple;
 }
