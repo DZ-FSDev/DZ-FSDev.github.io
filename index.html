@@ -9,7 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/boeing_737.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-calendar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-circle-packing.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-data-adapter.min.js"></script>
     <script src="newsLetter.js"></script>
+    <script src="indexCharts.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>DZ-FSDev - Home Page</title>
 </head>
@@ -75,30 +84,24 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="h-20">
-                        <img src="https://github.com/DZ-FSDev/js_snippets/raw/main/wordCloud/Demo1/Demo.png"
-                            alt="Los Angeles" class="d-block w-100 h-20">
-                        <h3 class="text-center">Los Angeles</h3>
-                        <p class="text-center">We had such a great time in LA!</p><br>
-                    </div>
+                    <div id="langCloudContainer" class="carousel-chart"></div>
+                    <h3 class="text-center">15 Most Spoken Languages</h3>
+                    <p class="text-center">Organized by Frequency!</p><br>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://github.com/DZ-FSDev/js_snippets/raw/main/wordCloud/Demo1/Demo.png" alt="New York"
-                        class="d-block w-100">
-                    <h3 class="text-center">Los Angeles</h3>
-                    <p class="text-center">We had such a great time in LA!</p><br>
+                    <div id="songGenreContainer" class="carousel-chart"></div>
+                    <h3 class="text-center">Top 100 Most Streamed Songs on Spotify by Genre</h3>
+                    <p class="text-center">Visualize listener's preferences!</p><br>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://github.com/DZ-FSDev/js_snippets/raw/main/wordCloud/Demo1/Demo.png" alt="New York"
-                        class="d-block w-100">
-                    <h3 class="text-center">Los Angeles</h3>
-                    <p class="text-center">We had such a great time in LA!</p><br>
+                    <div id="contribContainer" class="carousel-chart bg-light"></div>
+                    <h3 class="text-center">Bostock Contributions</h3>
+                    <p class="text-center">Bostock is busy!</p><br>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://github.com/DZ-FSDev/js_snippets/raw/main/wordCloud/Demo1/Demo.png" alt="New York"
-                        class="d-block w-100">
-                    <h3 class="text-center">Los Angeles</h3>
-                    <p class="text-center">We had such a great time in LA!</p><br>
+                    <div id="boeingContainer" class="carousel-chart"></div>
+                    <h3 class="text-center">Boeing 747 Seating</h3>
+                    <p class="text-center">Track your passengers!</p><br>
                 </div>
             </div>
         </div>
@@ -132,10 +135,13 @@
                 </div>
                 <div class="col-md-7">
                     <p>
-                        I am a driven and talented software developer who has taken unique interest in Financial Technologies. I've built high frequency algorithms, securities exchange emulation and capital transaction tools.
+                        I am a driven and talented software developer who has taken unique interest in Financial
+                        Technologies. I've built high frequency algorithms, securities exchange emulation and capital
+                        transaction tools.
                     </p>
                     <p>
-                        Everything around you is data and markets. The goal is always to innovate ways to capture and leverage that data. The market determines the capital for the data and that fuels the process.
+                        Everything around you is data and markets. The goal is always to innovate ways to capture and
+                        leverage that data. The market determines the capital for the data and that fuels the process.
                     </p>
                 </div>
             </div>
@@ -168,7 +174,8 @@
                             <!-- Email input -->
                             <div class="form-outline form-white mb-4">
                                 <input type="email" id="newsLetterForm" class="form-control" />
-                                <label id="newsLetterLabel" class="form-label" for="newsLetterForm">Email address</label>
+                                <label id="newsLetterLabel" class="form-label" for="newsLetterForm">Email
+                                    address</label>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -206,16 +213,20 @@
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="https://github.com/DZ-FSDev/finance/tree/main/canadaRevenueAgency" class="text-white">Canada Revenue Agency</a>
+                                <a href="https://github.com/DZ-FSDev/finance/tree/main/canadaRevenueAgency"
+                                    class="text-white">Canada Revenue Agency</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/finance/tree/main/liquidPoolMarkets" class="text-white">Liquid Markets</a>
+                                <a href="https://github.com/DZ-FSDev/finance/tree/main/liquidPoolMarkets"
+                                    class="text-white">Liquid Markets</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/finance/tree/main/spotMarkets" class="text-white">Spot Markets</a>
+                                <a href="https://github.com/DZ-FSDev/finance/tree/main/spotMarkets"
+                                    class="text-white">Spot Markets</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/finance/tree/main/futuresMarkets" class="text-white">Futures Markets</a>
+                                <a href="https://github.com/DZ-FSDev/finance/tree/main/futuresMarkets"
+                                    class="text-white">Futures Markets</a>
                             </li>
                         </ul>
                     </div>
@@ -231,13 +242,15 @@
                                 <a href="https://github.com/DZ-FSDev/airlines" class="text-white">Airlines Main</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/airlines/tree/main/reactiveAir" class="text-white">Reactive Air</a>
+                                <a href="https://github.com/DZ-FSDev/airlines/tree/main/reactiveAir"
+                                    class="text-white">Reactive Air</a>
                             </li>
                             <li>
                                 <a href="https://github.com/DZ-FSDev/physics" class="text-white">Physico Informatics</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/math/tree/main/matrices" class="text-white">Matrixes</a>
+                                <a href="https://github.com/DZ-FSDev/math/tree/main/matrices"
+                                    class="text-white">Matrixes</a>
                             </li>
                         </ul>
                     </div>
@@ -250,16 +263,20 @@
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/Particles_js" class="text-white">Particles</a>
+                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/Particles_js"
+                                    class="text-white">Particles</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/RainbowPath" class="text-white">Rainbow Path</a>
+                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/RainbowPath"
+                                    class="text-white">Rainbow Path</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/brain.js/housePrices" class="text-white">Housing Predictor</a>
+                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/brain.js/housePrices"
+                                    class="text-white">Housing Predictor</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/wordCloud" class="text-white">Word Cloud</a>
+                                <a href="https://github.com/DZ-FSDev/js_snippets/tree/main/wordCloud"
+                                    class="text-white">Word Cloud</a>
                             </li>
                         </ul>
                     </div>
@@ -275,7 +292,8 @@
                                 <a href="https://github.com/DZ-FSDev/chemistry" class="text-white">Chemistry</a>
                             </li>
                             <li>
-                                <a href="https://github.com/DZ-FSDev/chemistry/tree/main/spring" class="text-white">Spring</a>
+                                <a href="https://github.com/DZ-FSDev/chemistry/tree/main/spring"
+                                    class="text-white">Spring</a>
                             </li>
                             <li>
                                 <a href="https://github.com/DZ-FSDev/biology" class="text-white">Bioinformatics</a>
