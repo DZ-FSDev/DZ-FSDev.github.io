@@ -35,6 +35,10 @@ a:any-link {
     border-radius: max(3px, min(2vw, 20px));
 }
 
+.carousel-chart{
+    height: calc(30vh + 200px);
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
