@@ -1,6 +1,6 @@
 anychart.onDocumentReady(function () {
     var data = [
-        { "x": "Mandarin cChinese", "value": 1090000000, category: "Sino-Tibetan" },
+        { "x": "Mandarin Chinese", "value": 1090000000, category: "Sino-Tibetan" },
         { "x": "English", "value": 983000000, category: "Indo-European" },
         { "x": "Hindustani", "value": 544000000, category: "Indo-European" },
         { "x": "Spanish", "value": 527000000, category: "Indo-European" },
