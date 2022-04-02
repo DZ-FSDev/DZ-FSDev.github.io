@@ -45,6 +45,33 @@ a:any-link {
     text-align: center;
 }
 
+.productIconB{
+    display: block;
+    font-size: 5vw;
+    line-height: 10vw;
+    text-align: center;
+}
+
+@media(min-width:2500px){
+    .productIconB{
+        font-size: 4.5vw;
+    }
+
+    .productIcon{
+        font-size: 9vw;
+    }
+}
+
+@media(min-width:3000px){
+    .productIconB{
+        font-size: 4vw;
+    }
+
+    .productIcon{
+        font-size: 8vw;
+    }
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
