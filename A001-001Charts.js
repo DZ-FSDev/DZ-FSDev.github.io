@@ -62,14 +62,16 @@ Date.prototype.addDays = function (days) {
     return date;
 }
 
+const TPCC = 100;
+var tpc = 0;
+var date;
+
 function startStream(table, chart) {
     // set interval of data stream
-    let date = new Date(table.oc.b[table.oc.b.length - 1].values[0]);
+    date = new Date(table.oc.b[table.oc.b.length - 1].values[0]);
     date.setMonth(date.getMonth()+1);
-    const TPCC = 50;
-    let tpc = 0;
-    var myVar = setInterval(
-        function () {
+
+    let r = function () {
             if (tpc++ == TPCC) {
                 date = date.addDays(tpc=1);
                 let nc = [];
@@ -111,8 +113,10 @@ function startStream(table, chart) {
                 cc[0][7] = Math.min(cc[0][8], cc[0][7]).toFixed(2);
                 table.addData(cc);
             }
-        }, 100
-    );
+            window.requestAnimationFrame(r);
+        };
+
+        window.requestAnimationFrame(r);
 }
 
 function clearStorage(){
