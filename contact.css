@@ -1,5 +1,5 @@
 .fa-envelopes-bulk {
-    font-size: 32vw;
+    font-size: min(32vw,21vh);
 }
 
 ul,
@@ -115,16 +115,6 @@ iframe {
     width: 390px;
 }
 
-.contact100-form-title {
-    display: block;
-    font-family: Montserrat-ExtraBold;
-    font-size: 24px;
-    color: #333333;
-    line-height: 1.2;
-    text-align: left;
-    padding-bottom: 36px;
-}
-
 input.input100 {
     height: 50px;
     border-radius: 0.25rem;
@@ -152,7 +142,6 @@ textarea.input100 {
     display: block;
     width: 100%;
     background: #e6e6e6;
-    font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
     color: #666666;
