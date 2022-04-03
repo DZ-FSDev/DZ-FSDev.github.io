@@ -86,7 +86,7 @@ anychart.onDocumentReady(function () {
 
     // set the series for ACME
     var series_acme = chart.plot(0).candlestick(mapping_acme);
-    series_acme.name("ACME Corp.");
+    series_acme.name("Xylens Corp.");
 
     // set the series for Globex
     var series_globex = chart.plot(1).candlestick(mapping_globex);
@@ -106,29 +106,42 @@ anychart.onDocumentReady(function () {
     series_acme.risingStroke("#fff");
     series_acme.fallingStroke("#999");
 
-    chart.title('Stock Candlestick Demo: ACME Corp. vs. Globex Corp. vs. Soylent Corp.');
+    chart.title('Comparative: Xylens Corp. vs. Globex Corp.');
     chart.background('#00000000');
     chart.container('A001-001Charts');
     $('#A001-001Charts').height('75vh');
 
     chart.draw();
-    startStream(table);
+    startStream(table, chart);
 });
 
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
     var date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);
     return date;
 }
 
-function startStream(table) {
+function startStream(table, chart) {
     // set interval of data stream
     let date = new Date('2004-05-1');
+    const TPCC = 15;
+    let tpc = 0;
     var myVar = setInterval(
         function () {
-            date = date.addDays(1);
-            table.addData([[`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`, 92.20, 93.19, 92.14, 93.06, 19.13, 19.15, 18.43, 18.75]], table.oc.b.length > 150, 1);
-            console.log(table.oc.b.length);
-        }, 200
+            if (tpc++ == TPCC) {
+                date = date.addDays(tpc=1);
+                let nc = [];
+                nc.push(table.oc.b[table.oc.b.length - 1].values);
+                nc[0][0] = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+                table.addData(nc, table.oc.b.length > 150, 1);
+            } else {
+                let cc = [];
+                cc.push(table.oc.b[table.oc.b.length - 1].values);
+                cc[0][1] = Math.random() * 50 + 25;
+                table.addData(cc);
+                chart.redraw();
+                console.log(table.oc.b[table.oc.b.length - 1].values);
+            }
+        }, 100
     );
 }
