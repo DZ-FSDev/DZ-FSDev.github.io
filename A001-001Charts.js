@@ -75,19 +75,39 @@ function startStream(table, chart) {
                 nc.push(table.oc.b[table.oc.b.length - 1].values.slice());
                 nc[0][0] = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
                 nc[0][1] = nc[0][2] = nc[0][3] = nc[0][4];
+                nc[0][5] = nc[0][6] = nc[0][7] = nc[0][8];
                 table.addData(nc, table.oc.b.length > 100, 1);
 
                 let cDat = [];
                 table.oc.b.forEach(v=>cDat.push(v.values));
 
                 localStorage.setItem('preatorian', JSON.stringify(cDat));
-                console.log(localStorage.getItem('preatorian'))
             } else {
                 let cc = [];
                 cc.push(table.oc.b[table.oc.b.length - 1].values);
-                cc[0][4] = table.oc.b[table.oc.b.length - 2].values[4] * 1.0001 + Math.random() * 10.0 * Math.sin(Date.now()/20000);
-                cc[0][2] = Math.max(cc[0][4], cc[0][2]);
-                cc[0][3] = Math.min(cc[0][4], cc[0][3]);
+                cc[0][4] = (table.oc.b[table.oc.b.length - 1].values[1] * 1.001 + 0.01
+                    + Math.random() * 1.2 * Math.sin(Date.now()/19000)
+                    + Math.random() * 1.3 * Math.sin(Date.now()/23000)
+                    + Math.random() * 1.4 * Math.sin(Date.now()/31000)
+                    + Math.random() * 1.5 * Math.sin(Date.now()/37000)
+                    + Math.random() * 2 * Math.sin(Date.now()/200)
+                    + 3 * Math.sin(Date.now()/5700)
+                    + Math.random() * Math.pow(Math.cos(Date.now()/157000),7) * 10
+                    ).toFixed(2);
+                cc[0][2] = Math.max(cc[0][4], cc[0][2]).toFixed(2);
+                cc[0][3] = Math.min(cc[0][4], cc[0][3]).toFixed(2);
+
+                cc[0][8] = (table.oc.b[table.oc.b.length - 1].values[5] * 1.002 + 0.01
+                    + Math.random() * 1.2 * Math.cos(Date.now()/19000)
+                    + Math.random() * 1.3 * Math.cos(Date.now()/23000)
+                    + Math.random() * 1.4 * Math.cos(Date.now()/31000)
+                    + Math.random() * 1.5 * Math.cos(Date.now()/37000)
+                    + Math.random() * 2 * Math.cos(Date.now()/200)
+                    + 3 * Math.cos(Date.now()/5700)
+                    + Math.random() * Math.pow(Math.sin(Date.now()/157000),7) * 10
+                    ).toFixed(2);
+                cc[0][6] = Math.max(cc[0][8], cc[0][6]).toFixed(2);
+                cc[0][7] = Math.min(cc[0][8], cc[0][7]).toFixed(2);
                 table.addData(cc);
             }
         }, 100
