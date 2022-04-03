@@ -133,14 +133,12 @@ function startStream(table, chart) {
                 let nc = [];
                 nc.push(table.oc.b[table.oc.b.length - 1].values);
                 nc[0][0] = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-                table.addData(nc, table.oc.b.length > 150, 1);
+                table.addData(nc, table.oc.b.length > 100, 1);
             } else {
                 let cc = [];
                 cc.push(table.oc.b[table.oc.b.length - 1].values);
                 cc[0][1] = Math.random() * 50 + 25;
                 table.addData(cc);
-                chart.redraw();
-                console.log(table.oc.b[table.oc.b.length - 1].values);
             }
         }, 100
     );
