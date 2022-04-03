@@ -94,21 +94,41 @@ anychart.onDocumentReady(function () {
 
     // set the custom colors for Globex series
     series_globex.risingStroke("#336666");
-    series_globex.risingFill("#339999");
+    series_globex.risingFill("#33ff99");
     series_globex.fallingStroke("#660000");
-    series_globex.fallingFill("#990033");
+    series_globex.fallingFill("#ff0033");
 
     // set the custom hatch fillings for ACME series
     series_acme.risingHatchFill("backward-diagonal", "#000", 2);
     series_acme.fallingHatchFill("forward-diagonal", "#000", 2);
     series_acme.risingFill("#fff");
     series_acme.fallingFill("#fff");
-    series_acme.risingStroke("#000");
-    series_acme.fallingStroke("#000");
+    series_acme.risingStroke("#fff");
+    series_acme.fallingStroke("#999");
 
     chart.title('Stock Candlestick Demo: ACME Corp. vs. Globex Corp. vs. Soylent Corp.');
+    chart.background('#00000000');
     chart.container('A001-001Charts');
     $('#A001-001Charts').height('75vh');
 
     chart.draw();
+    startStream(table);
 });
+
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+function startStream(table) {
+    // set interval of data stream
+    let date = new Date('2004-05-1');
+    var myVar = setInterval(
+        function () {
+            date = date.addDays(1);
+            table.addData([[`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`, 92.20, 93.19, 92.14, 93.06, 19.13, 19.15, 18.43, 18.75]], table.oc.b.length > 150, 1);
+            console.log(table.oc.b.length);
+        }, 200
+    );
+}
