@@ -3,9 +3,8 @@ anychart.onDocumentReady(function () {
     // set the data
     table = anychart.data.table();
     table.addData(data != null ? JSON.parse(data) :
-        [['2004-01-02', 300, 300, 300, 300, 500, 500, 500, 500],
-        ['2004-01-03', 300, 300, 300, 300, 500, 500, 500, 500],
-        ['2004-01-04', 300, 300, 300, 300, 500, 500, 500, 500]
+        [
+        ['2004-01-04', 500, 500, 500, 500, 700, 700, 700, 700]
         ]);
 
     // map the data for the ACME Corp. series
@@ -69,16 +68,15 @@ var date;
 function startStream(table, chart) {
     // set interval of data stream
     date = new Date(table.oc.b[table.oc.b.length - 1].values[0]);
-    date.setMonth(date.getMonth() + 1);
 
     let r = function () {
         if (tpc++ == TPCC) {
             date = date.addDays(tpc = 1);
             let nc = [];
             nc.push(table.oc.b[table.oc.b.length - 1].values.slice());
-            nc[0][0] = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-            nc[0][1] = nc[0][2] = nc[0][3] = nc[0][4];
-            nc[0][5] = nc[0][6] = nc[0][7] = nc[0][8];
+            nc[0][0] = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+            nc[0][1] = nc[0][2] = nc[0][3] = Math.random() < 0.1 ? (nc[0][4] = (Math.random() < 0.5 ? 0.98 : 1.02) * nc[0][4]) : nc[0][4];
+            nc[0][5] = nc[0][6] = nc[0][7] = Math.random() < 0.05 ? (nc[0][8] = (Math.random() < 0.5 ? 0.97 : 1.03) * nc[0][8]) : nc[0][8];
             table.addData(nc, table.oc.b.length > 100, 1);
 
             let cDat = [];
@@ -88,24 +86,24 @@ function startStream(table, chart) {
         } else {
             let cc = [];
             cc.push(table.oc.b[table.oc.b.length - 1].values);
-            cc[0][4] = (table.oc.b[table.oc.b.length - 1].values[1] * 1.001 + 0.01
+            cc[0][4] = (table.oc.b[table.oc.b.length - 1].values[1] * (Math.floor(cc[0][1])%13==0?0.98:1.001) + 1
                 + Math.random() * 1.2 * Math.sin(Date.now() / 37000)
                 + Math.random() * 1.3 * Math.sin(Date.now() / 47000)
                 + Math.random() * 1.4 * Math.sin(Date.now() / 57000)
                 + Math.random() * 1.5 * Math.sin(Date.now() / 67000)
-                + Math.random() * 2 * Math.sin(Date.now() / 200)
+                + Math.random() * 3 * Math.sin(Date.now() / 350)
                 + 3 * Math.sin(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.cos(Date.now() / 157000), 7) * 10
             ).toFixed(2);
             cc[0][2] = Math.max(cc[0][4], cc[0][2]).toFixed(2);
             cc[0][3] = Math.min(cc[0][4], cc[0][3]).toFixed(2);
 
-            cc[0][8] = (table.oc.b[table.oc.b.length - 1].values[5] * 1.002 + 0.01
+            cc[0][8] = (table.oc.b[table.oc.b.length - 1].values[5] * (Math.floor(cc[0][5])%13==0?0.97:1.002) + 1
                 + Math.random() * 1.2 * Math.cos(Date.now() / 37000)
                 + Math.random() * 1.3 * Math.cos(Date.now() / 47000)
                 + Math.random() * 1.4 * Math.cos(Date.now() / 57000)
                 + Math.random() * 1.5 * Math.cos(Date.now() / 67000)
-                + Math.random() * 2 * Math.cos(Date.now() / 200)
+                + Math.random() * 3 * Math.cos(Date.now() / 300)
                 + 3 * Math.cos(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.sin(Date.now() / 157000), 7) * 5
             ).toFixed(2);
