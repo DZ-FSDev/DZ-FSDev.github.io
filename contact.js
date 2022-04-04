@@ -1,5 +1,10 @@
 $().ready(() => {
     let inputs = ['name', 'phone', 'email', 'message'];
-    $('#phone').on('input',()=>$('.contact-phone-error').hide());
+    for (let elementId of inputs) {
+        $(`#${elementId}`).on('input', () => $(`.contact-${elementId}-error`).hide());
+    }
 
+    $('#contacter').on('submit',
+        ()=>console.log('hi')
+    )
 });
