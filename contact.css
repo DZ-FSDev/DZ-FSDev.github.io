@@ -225,6 +225,7 @@ textarea.input100 {
 
 .contact-error{
     background-color: #e6e6e6;
+    display: none;
     padding: 3px 5px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
