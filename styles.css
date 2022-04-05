@@ -85,7 +85,11 @@ a:any-link {
 }
 
 .bg-smoke{
-    background-color: #111D;
+    background-color: #111A;
+}
+
+.bg-smoke-success{
+    background-color: #4A7A;
 }
 
 #c {
