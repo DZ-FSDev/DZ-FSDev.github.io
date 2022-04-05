@@ -91,7 +91,7 @@ function startStream(table, chart) {
                 + Math.random() * 2.3 * Math.sin(Date.now() / 47000)
                 + Math.random() * 2.4 * Math.sin(Date.now() / 57000)
                 + Math.random() * 2.5 * Math.sin(Date.now() / 67000)
-                + Math.max(Math.min(Math.tan(Date.now() / 730000),0.01),-0.01)
+                + Math.max(Math.min(Math.tan(Date.now() / 730000),0.1),-0.1)
                 + Math.random() * 5 * Math.sin(Date.now() / 350)
                 + 3 * Math.sin(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.cos(Date.now() / 157000), 7) * 10
@@ -104,7 +104,7 @@ function startStream(table, chart) {
                 + Math.random() * 2.3 * Math.cos(Date.now() / 47000)
                 + Math.random() * 2.4 * Math.cos(Date.now() / 57000)
                 + Math.random() * 2.5 * Math.cos(Date.now() / 67000)
-                + Math.max(Math.min(Math.tan(Date.now() / 810000),0.015),-0.015)
+                + Math.max(Math.min(Math.tan(Date.now() / 810000),0.15),-0.15)
                 + Math.random() * 5 * Math.cos(Date.now() / 300)
                 + 3 * Math.cos(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.sin(Date.now() / 157000), 7) * 5
