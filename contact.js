@@ -1,7 +1,10 @@
 $().ready(() => {
     let inputs = ['name', 'phone', 'email', 'message'];
     for (let elementId of inputs) {
-        $(`#${elementId}`).on('input', () => $(`.contact-${elementId}-error`).hide());
+        $(`#${elementId}`).on('input', () => $(`.contact-${elementId}-error`).animate(
+            {opacity:"0%"},
+            700
+        ));
     }
 
     $('#contacter').on('submit',
@@ -20,7 +23,11 @@ $().ready(() => {
                     // Test n' Trim! (User shouldn't be able to submit spaces as a name.)
                     $(`#${key}`).val($(`#${key}`).val().trim()).val()
                 );
-                $(`.contact-${key}-error`).css({ 'display': acceptable ? 'none' : 'inline' });
+                $(`.contact-${key}-error`).animate(
+                    {opacity:`${acceptable ? '0' : '100'}%`},
+                    500
+                );
+                //css({ 'display': acceptable ? 'none' : 'inline' });
                 if (!acceptable && !hasErrors) {
                     document.getElementById(`${key}`).focus();
                 }
