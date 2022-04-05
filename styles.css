@@ -9,7 +9,7 @@ a:any-link {
     margin-right: 1vw;
 }
 
-.card{
+.card {
     border-width: 0.3vw;
 }
 
@@ -35,44 +35,44 @@ a:any-link {
     border-radius: max(3px, min(2vw, 20px));
 }
 
-.carousel-chart{
+.carousel-chart {
     height: calc(30vh + 200px);
 }
 
-.productIcon{
+.productIcon {
     display: block;
     font-size: 10vw;
     text-align: center;
 }
 
-.productIconB{
+.productIconB {
     display: block;
     font-size: 5vw;
     line-height: 10vw;
     text-align: center;
 }
 
-@media(min-width:2500px){
-    .productIconB{
+@media(min-width:2500px) {
+    .productIconB {
         font-size: 4.5vw;
     }
 
-    .productIcon{
+    .productIcon {
         font-size: 9vw;
     }
 }
 
-@media(min-width:3000px){
-    .productIconB{
+@media(min-width:3000px) {
+    .productIconB {
         font-size: 4vw;
     }
 
-    .productIcon{
+    .productIcon {
         font-size: 8vw;
     }
 }
 
-.text-purple{
+.text-purple {
     color: purple;
 }
 
@@ -82,4 +82,11 @@ a:any-link {
     width: 50px;
     text-align: center;
     text-decoration: none;
+}
+
+#c {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
