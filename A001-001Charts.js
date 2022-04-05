@@ -77,7 +77,7 @@ function startStream(table, chart) {
             nc[0][0] = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
             nc[0][1] = nc[0][2] = nc[0][3] = Math.random() < 0.1 ? (nc[0][4] = (Math.random() < 0.5 ? 0.98 : 1.02) * nc[0][4]) : nc[0][4];
             nc[0][5] = nc[0][6] = nc[0][7] = Math.random() < 0.05 ? (nc[0][8] = (Math.random() < 0.5 ? 0.97 : 1.03) * nc[0][8]) : nc[0][8];
-            table.addData(nc, table.oc.b.length > 100, 1);
+            table.addData(nc, table.oc.b.length > 150, 1);
 
             let cDat = [];
             table.oc.b.forEach(v => cDat.push(v.values));
@@ -91,6 +91,7 @@ function startStream(table, chart) {
                 + Math.random() * 1.3 * Math.sin(Date.now() / 47000)
                 + Math.random() * 1.4 * Math.sin(Date.now() / 57000)
                 + Math.random() * 1.5 * Math.sin(Date.now() / 67000)
+                + Math.max(Math.min(Math.tan(Date.now() / 730000),0.01),-0.01)
                 + Math.random() * 3 * Math.sin(Date.now() / 350)
                 + 3 * Math.sin(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.cos(Date.now() / 157000), 7) * 10
@@ -103,6 +104,7 @@ function startStream(table, chart) {
                 + Math.random() * 1.3 * Math.cos(Date.now() / 47000)
                 + Math.random() * 1.4 * Math.cos(Date.now() / 57000)
                 + Math.random() * 1.5 * Math.cos(Date.now() / 67000)
+                + Math.max(Math.min(Math.tan(Date.now() / 810000),0.015),-0.015)
                 + Math.random() * 3 * Math.cos(Date.now() / 300)
                 + 3 * Math.cos(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.sin(Date.now() / 157000), 7) * 5
@@ -118,7 +120,7 @@ function startStream(table, chart) {
 }
 
 $().ready(
-    () => setTimeout(() => location.reload(), 120000)
+    () => setTimeout(() => location.reload(), 90000)
 );
 
 function clearStorage() {
