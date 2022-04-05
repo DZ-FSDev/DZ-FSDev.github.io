@@ -5,7 +5,9 @@ $().ready(() => {
     }
 
     $('#contacter').on('submit',
-        () => {
+        e => {
+            let hasErrors = false;
+
             let formValidators = {
                 name: /^.{1,100}$/,
                 phone: /^.{1,100}$/,
@@ -22,10 +24,12 @@ $().ready(() => {
                 if (!acceptable && !hasErrors) {
                     document.getElementById(`${key}`).focus();
                 }
-                $hasErrors ||= !$acceptable;
+                hasErrors ||= !acceptable;
             }
 
-
+            if(hasErrors){
+                e.preventDefault();
+            }
         }
 
     )
