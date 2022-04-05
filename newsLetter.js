@@ -17,4 +17,6 @@ $().ready(() => {
             $('#newsLetterLabel').text('Email address');
         }
     );
+
+    $('input').attr('autocomplete', 'off');
 });
