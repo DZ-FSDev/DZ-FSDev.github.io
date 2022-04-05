@@ -93,6 +93,8 @@ function startStream(table, chart) {
                 + Math.random() * 2.5 * Math.sin(Date.now() / 67000)
                 + Math.max(Math.min(Math.tan(Date.now() / 730000),0.1),-0.1)
                 + Math.random() * 5 * Math.sin(Date.now() / 350)
+                + Math.random() * 5 * Math.cos(Date.now() / 250)
+                + Math.random() * 5 * Math.cos(Date.now() / 150)
                 + 3 * Math.sin(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.cos(Date.now() / 157000), 7) * 10
             ).toFixed(2);
@@ -106,6 +108,8 @@ function startStream(table, chart) {
                 + Math.random() * 2.5 * Math.cos(Date.now() / 67000)
                 + Math.max(Math.min(Math.tan(Date.now() / 810000),0.15),-0.15)
                 + Math.random() * 5 * Math.cos(Date.now() / 300)
+                + Math.random() * 5 * Math.cos(Date.now() / 200)
+                + Math.random() * 5 * Math.cos(Date.now() / 100)
                 + 3 * Math.cos(Date.now() / 5700)
                 + Math.random() * Math.pow(Math.sin(Date.now() / 157000), 7) * 5
             ).toFixed(2);
