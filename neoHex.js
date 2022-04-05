@@ -1,5 +1,6 @@
 /**
  * @author https://codepen.io/towc
+ * @author DZ-FSDev
  */
 var w = c.width = window.innerWidth,
     h = c.height = window.innerHeight,
@@ -7,7 +8,7 @@ var w = c.width = window.innerWidth,
 
     opts = {
 
-        len: 20,
+        len: 50,
         count: 50,
         baseTime: 10,
         addedTime: 10,
@@ -18,13 +19,13 @@ var w = c.width = window.innerWidth,
         sparkSize: 2,
 
         color: 'hsl(hue,100%,light%)',
-        baseLight: 50,
-        addedLight: 10, // [50-10,50+10]
+        baseLight: 25,
+        addedLight: 10, // [15-10,15+10]
         shadowToTimePropMult: 6,
         baseLightInputMultiplier: .01,
         addedLightInputMultiplier: .02,
 
-        cx: w / 2,
+        cx: w  / 2,
         cy: h / 2,
         repaintAlpha: .04,
         hueChange: .1
