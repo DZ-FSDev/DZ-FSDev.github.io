@@ -88,6 +88,10 @@ a:any-link {
     background-color: #111A;
 }
 
+.bg-black{
+    background-color: black !important;
+}
+
 .bg-smoke-success{
     background-color: #4A7A;
 }
