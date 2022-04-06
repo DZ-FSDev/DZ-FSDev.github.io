@@ -52,6 +52,24 @@ a:any-link {
     text-align: center;
 }
 
+@media(min-width:770px) and (max-width:990px) {
+    .socials:first-child{
+        margin-left: 30px;
+    }
+}
+
+@media(min-width:770px) {
+    #newsLetterSubmit {
+        margin-right: 60px;
+    }
+}
+
+@media(min-width:990px) {
+    #newsLetterSubmit {
+        margin-right: 100px;
+    }
+}
+
 @media(min-width:2500px) {
     .productIconB {
         font-size: 4.5vw;
@@ -84,15 +102,15 @@ a:any-link {
     text-decoration: none;
 }
 
-.bg-smoke{
+.bg-smoke {
     background-color: #111A;
 }
 
-.bg-black{
+.bg-black {
     background-color: black !important;
 }
 
-.bg-smoke-success{
+.bg-smoke-success {
     background-color: #4A7A;
 }
 
