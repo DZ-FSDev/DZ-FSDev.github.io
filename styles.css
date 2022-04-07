@@ -40,14 +40,18 @@ a:any-link {
     transition-duration: 0.5s;
 }
 
+.navbar-toggler{
+    box-shadow: white 1px 1px 5px;
+}
+
 .breadcrumb-item:first-child {
     margin-left: 20px;
 }
 
 .breadcrumb, .nav-item {
-    border-top: #40ae7b solid 0.3vh;
+    border-top: #40ae7b solid calc(0.2vh + 0.2vw);
     padding: 0.5vw;
-    border-radius: max(3px, min(2vw, 20px));
+    border-radius: max(3px, min(2vw, 30px));
 }
 
 .carousel-chart {
