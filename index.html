@@ -81,29 +81,29 @@
         </ul>
     </div>
     <main>
-        <div id="demo" class="carousel slide bg-smoke-success" data-bs-ride="carousel">
+        <div id="indexCarousel" class="carousel slide bg-smoke-success" data-bs-ride="carousel">
 
             <!-- Indicators/dots -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="3"></button>
             </div>
 
             <!-- The slideshow/carousel -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="7000">
                     <div id="langCloudContainer" class="carousel-chart"></div><br>
                     <h3 class="text-center">15 Most Spoken Languages</h3>
                     <p class="text-center">Organized by Frequency!</p><br>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="7000">
                     <div id="songGenreContainer" class="carousel-chart"></div><br>
                     <h3 class="text-center">Top 100 Most Streamed Songs on Spotify by Genre</h3>
                     <p class="text-center">Visualize listener's preferences!</p><br>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="7000">
                     <div class="row bg-light">
                         <div class="col-2"></div>
                         <div id="contribContainer" class="carousel-chart col-8"></div>
@@ -112,7 +112,7 @@
                     <h3 class="text-center">Bostock Contributions</h3>
                     <p class="text-center">Bostock is busy!</p><br>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="7000">
                     <div id="boeingContainer" class="carousel-chart"></div><br>
                     <h3 class="text-center">Boeing 747 Seating</h3>
                     <p class="text-center">Track your passengers!</p><br>
@@ -167,7 +167,7 @@
                     <p>
                         What went into making this website possible?
                     </p>
-                    <table class="table text-light bg-smoke ms-5">
+                    <table class="table text-light ms-5">
                         <thead>
                             <tr>
                             </tr>
