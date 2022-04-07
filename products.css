@@ -5,3 +5,35 @@
     text-align: center;
     text-decoration: none;
 }
+
+@media(min-width:2500px) {
+    .productIconB {
+        font-size: 4.5vw;
+    }
+
+    .productIcon {
+        font-size: 9vw;
+    }
+}
+
+@media(min-width:3000px) {
+    .productIconB {
+        font-size: 4vw;
+    }
+
+    .productIcon {
+        font-size: 8vw;
+    }
+}
+
+i, .productIconB{
+    padding-top: 50px;
+    text-shadow: white 2px 2px 3px;
+}
+
+@media(max-width:768px) {
+    i, .productIconB{
+        padding-top: 30px;
+        text-shadow: white 1px 1px 2px;
+    }
+}
