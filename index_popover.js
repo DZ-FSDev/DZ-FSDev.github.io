@@ -1,3 +1,10 @@
+/**
+ * Enables Popover functionality to any elements which belong to the
+ * class 'popover-dismiss-btn'.
+ * 
+ * @author DZ-FSDev
+ * @version 0.0.8
+ */
 $().ready(() => {
     $('.popover-dismiss-btn').popover({
         container: 'body',
@@ -5,17 +12,3 @@ $().ready(() => {
         customClass: 'bg-smoke-success text-success'
     })
 });
-
-/*
-new bootstrap.Popover(document.querySelector('#popover-dismiss-2021'), {
-    container: 'body',
-    trigger: 'focus',
-    customClass: 'bg-smoke-success text-success'
-});
-
-new bootstrap.Popover(document.querySelector('#popover-dismiss-2022'), {
-    container: 'body',
-    trigger: 'focus',
-    customClass: 'bg-smoke-success text-success'
-});
-*/
