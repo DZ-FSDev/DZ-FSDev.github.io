@@ -3,6 +3,10 @@ a {
     text-shadow: black 1px 1px;
 }
 
+a:hover{
+    color: #40AE7B;
+}
+
 .nav-item.bg-success{
     border-bottom-left-radius: 2px;
     box-shadow: #40AE7B 3px 5px 1px;
