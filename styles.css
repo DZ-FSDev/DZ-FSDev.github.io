@@ -7,6 +7,18 @@ a:hover{
     color: #40AE7B;
 }
 
+body {
+    background-color: black;
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .nav-item.bg-success{
     border-bottom-left-radius: 2px;
     box-shadow: #40AE7B 3px 5px 1px;
