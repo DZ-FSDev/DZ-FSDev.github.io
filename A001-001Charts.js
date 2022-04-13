@@ -69,8 +69,8 @@ anychart.onDocumentReady(function () {
     chart.container('A001-001Charts');
     $('#A001-001Charts').height('75vh');
 
-    chart.draw();
-    startStream(table, chart);
+    chart.draw(true);
+    startStream(table);
 });
 
 Date.prototype.addDays = function (days) {
@@ -83,7 +83,7 @@ const TPCC = 83;
 var tpc = 0;
 var date;
 
-function startStream(table, chart) {
+function startStream(table) {
     // set interval of data stream
     date = new Date(table.oc.b[table.oc.b.length - 1].values[0]);
 
@@ -97,7 +97,7 @@ function startStream(table, chart) {
             nc[0][0] = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
             nc[0][1] = nc[0][2] = nc[0][3] = Math.random() < 0.1 ? (nc[0][4] = (Math.random() < 0.5 ? 0.98 : 1.02) * nc[0][4]) : nc[0][4];
             nc[0][5] = nc[0][6] = nc[0][7] = Math.random() < 0.05 ? (nc[0][8] = (Math.random() < 0.5 ? 0.97 : 1.03) * nc[0][8]) : nc[0][8];
-            table.addData(nc, table.oc.b.length > 150, 1);
+            table.addData(nc, table.oc.b.length > 75, 1);
 
             let cDat = [];
             table.oc.b.forEach(v => cDat.push(v.values));
