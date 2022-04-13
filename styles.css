@@ -1,9 +1,27 @@
+/*  Original Licensing Copyright
+ * 
+ *  Copyright (C) 2022  DZ-FSDev
+ *  
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+ 
 a, a:any-link {
     color: #40AE7B;
     text-shadow: black 1px 1px;
 }
 
-a:hover{
+a:hover {
     color: #40AE7B;
 }
 
@@ -13,13 +31,18 @@ body {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-  
+
 @keyframes fadeInAnimation {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
-.nav-item.bg-success{
+.nav-item.bg-success {
     border-bottom-left-radius: 2px;
     box-shadow: #40AE7B 3px 5px 1px;
     text-shadow: black 1px 1px;
@@ -47,13 +70,13 @@ body {
     margin-right: 0;
 }
 
-.nav-item:hover,.nav-item:focus-visible {
+.nav-item:hover, .nav-item:focus-visible {
     filter: brightness(110%);
     letter-spacing: 2px;
     transition-duration: 0.5s;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     box-shadow: white 1px 1px 5px;
 }
 
@@ -85,7 +108,7 @@ body {
 }
 
 @media(min-width:770px) and (max-width:990px) {
-    .socials:first-child{
+    .socials:first-child {
         margin-left: 30px;
     }
 }
