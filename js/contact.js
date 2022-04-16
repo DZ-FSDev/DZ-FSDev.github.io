@@ -21,9 +21,17 @@ $().ready(() => {
     for (let elementId of inputs) {
         $(`#${elementId}`).on('input', () => $(`.contact-${elementId}-error`).animate(
             {opacity:"0%"},
-            700
+            300
         ));
     }
+
+    $('#contacter').on('reset',
+    e => {
+        $('.contact-error').animate(
+            {opacity:0},
+            200
+        );
+    });
 
     $('#contacter').on('submit',
         e => {
@@ -43,7 +51,7 @@ $().ready(() => {
                 );
                 $(`.contact-${key}-error`).animate(
                     {opacity:`${acceptable ? '0' : '100'}%`},
-                    500
+                    200
                 );
                 //css({ 'display': acceptable ? 'none' : 'inline' });
                 if (!acceptable && !hasErrors) {
@@ -55,7 +63,5 @@ $().ready(() => {
             if(hasErrors){
                 e.preventDefault();
             }
-        }
-
-    )
+        });
 });
