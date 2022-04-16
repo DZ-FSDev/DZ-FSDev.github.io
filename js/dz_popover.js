@@ -28,5 +28,13 @@ $().ready(() => {
         container: 'body',
         trigger: 'focus',
         customClass: 'bg-smoke-success text-success'
-    })
+    });
+    $(document).bind("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    $(document).keydown(function(e){
+        if(e.which === 123){
+           return false;
+        }
+    });
 });
