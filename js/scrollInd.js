@@ -21,4 +21,12 @@ window.onscroll = () => {
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
     document.getElementById("scrollIndicator").style.width = (scrolled * 0.98 + 2) + "%";
+    $(document).bind("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    $(document).keydown(function(e){
+        if(e.which === 123){
+           return false;
+        }
+    });
 }
