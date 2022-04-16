@@ -22,7 +22,7 @@ anychart.onDocumentReady(function () {
     table = anychart.data.table();
     table.addData(data != null ? JSON.parse(data) :
         [
-        ['2004-01-04', 1500, 1500, 1500, 1500, 1700, 1700, 1700, 1700]
+            ['2004-01-04', 1500, 1500, 1500, 1500, 1700, 1700, 1700, 1700]
         ]);
 
     // map the data for the Sylens Corp. series
@@ -94,7 +94,7 @@ function startStream(table) {
             date = date.addDays(tpc = 1);
             let nc = [];
             nc.push(table.oc.b[table.oc.b.length - 1].values.slice());
-            nc[0][0] = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+            nc[0][0] = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
             nc[0][1] = nc[0][2] = nc[0][3] = Math.random() < 0.1 ? (nc[0][4] = (Math.random() < 0.5 ? 0.98 : 1.02) * nc[0][4]) : nc[0][4];
             nc[0][5] = nc[0][6] = nc[0][7] = Math.random() < 0.05 ? (nc[0][8] = (Math.random() < 0.5 ? 0.97 : 1.03) * nc[0][8]) : nc[0][8];
             table.addData(nc, table.oc.b.length > 75, 1);
@@ -106,7 +106,7 @@ function startStream(table) {
         } else {
             let cc = [];
             cc.push(table.oc.b[table.oc.b.length - 1].values);
-            cc[0][4] = (table.oc.b[table.oc.b.length - 1].values[1] * (Math.floor(cc[0][1])%13==0?0.98:1.0) + 2
+            cc[0][4] = (table.oc.b[table.oc.b.length - 1].values[1] * (Math.floor(cc[0][1]) % 13 == 0 ? 0.98 : 1.0) + 2
                 + Math.random() * 2.4 * Math.sin(Date.now() / 57000)
                 + Math.random() * 2.5 * Math.sin(Date.now() / 67000)
                 + Math.random() * 6 * Math.sin(Date.now() / 453)
@@ -116,7 +116,7 @@ function startStream(table) {
             cc[0][2] = Math.max(cc[0][4], cc[0][2]).toFixed(2);
             cc[0][3] = Math.min(cc[0][4], cc[0][3]).toFixed(2);
 
-            cc[0][8] = (table.oc.b[table.oc.b.length - 1].values[5] * (Math.floor(cc[0][5])%13==0?0.97:1.0) + 2
+            cc[0][8] = (table.oc.b[table.oc.b.length - 1].values[5] * (Math.floor(cc[0][5]) % 13 == 0 ? 0.97 : 1.0) + 2
                 + Math.random() * 2.4 * Math.cos(Date.now() / 57000)
                 + Math.random() * 2.5 * Math.cos(Date.now() / 67000)
                 + Math.random() * 7 * Math.cos(Date.now() / 433)
@@ -133,7 +133,17 @@ function startStream(table) {
 }
 
 $().ready(
-    () => setTimeout(() => location.reload(), 90000)
+    () => {
+        setTimeout(() => location.reload(), 90000);
+        $(document).bind("contextmenu", function (e) {
+            e.preventDefault();
+        });
+        $(document).keydown(function (e) {
+            if (e.which === 123) {
+                return false;
+            }
+        });
+    }
 );
 
 function clearStorage() {
