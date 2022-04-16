@@ -87,7 +87,6 @@ ctx.fillStyle = 'black';
 ctx.fillRect(0, 0, w, h);
 
 function loop() {
-
     window.requestAnimationFrame(loop);
 
     ++tick;
@@ -109,11 +108,9 @@ function loop() {
     }
 }
 function Line() {
-
     this.reset();
 }
 Line.prototype.reset = function () {
-
     this.x = 0;
     this.y = 0;
     this.addedX = 0;
@@ -169,8 +166,15 @@ function initLoop(fps) {
     startTime = then;
     loop();
 }
-initLoop(30);
-
+initLoop(20);
+$(document).bind("contextmenu", function (e) {
+    e.preventDefault();
+});
+$(document).keydown(function(e){
+    if(e.which === 123){
+       return false;
+    }
+});
 window.addEventListener('resize', function () {
 
     w = c.width = window.innerWidth;
