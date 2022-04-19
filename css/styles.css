@@ -15,10 +15,18 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
- 
+
 a, a:any-link {
     color: #40AE7B;
     text-shadow: black 1px 1px;
+}
+
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    /*Safari*/
+    -moz-user-select: none;
+    /*Firefox*/
 }
 
 a:hover {
